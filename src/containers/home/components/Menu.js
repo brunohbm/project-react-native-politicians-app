@@ -15,6 +15,7 @@ import TeamworkSvg from '../../../images/teamwork.svg';
 import UserSvg from '../../../images/user.svg';
 import VoteSvg from '../../../images/vote.svg';
 import {useCallback} from 'react';
+import variables from '../../../values/variables';
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 21,
+    fontSize: variables.mediumFontSize,
     fontWeight: '700',
     textAlign: 'center',
     color: colors.textColor,

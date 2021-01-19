@@ -2,15 +2,14 @@ import React, {useMemo} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import colors from '../../../values/colors';
-
-const defaultSpacement = '7.5%';
+import variables from '../../../values/variables';
 
 const styles = StyleSheet.create({
   eventsTitle: {
-    fontSize: 21,
+    fontSize: variables.mediumFontSize,
     fontWeight: '600',
     color: colors.textColor,
-    paddingLeft: defaultSpacement,
+    paddingLeft: variables.horizontalPadding,
     marginBottom: 10,
   },
   cardContainer: {
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   seeAllEventsText: {
-    fontSize: 15,
+    fontSize: variables.smallFontSize,
     fontWeight: '700',
     textAlign: 'center',
     color: colors.primaryColor,
@@ -37,11 +36,11 @@ const EventItem = ({color, spacementRight}) => {
     };
 
     if (spacementRight) {
-      style.marginRight = defaultSpacement;
+      style.marginRight = variables.horizontalPadding;
       style.borderTopEndRadius = 11;
       style.borderBottomEndRadius = 11;
     } else {
-      style.marginLeft = defaultSpacement;
+      style.marginLeft = variables.horizontalPadding;
       style.borderTopStartRadius = 11;
       style.borderBottomStartRadius = 11;
     }
