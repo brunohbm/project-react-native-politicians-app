@@ -7,20 +7,37 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import colors from '../values/colors';
 import variables from '../values/variables';
-import { useCallback } from 'react';
+import {useCallback} from 'react';
 
 const styles = StyleSheet.create({
   header: {
+    position: 'absolute',
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: colors.whiteColor,
     paddingTop: variables.verticalPadding,
     paddingBottom: variables.verticalPadding,
     paddingLeft: variables.horizontalPadding,
     paddingRight: variables.horizontalPadding,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    shadowColor: colors.blackColor,
+    elevation: 15,
+    shadowOffset: {
+      width: 15,
+      height: 15,
+    },
+    shadowRadius: 20,
+    shadowOpacity: 1.0,
   },
   titleText: {
     fontWeight: '600',
     color: colors.textColor,
     fontSize: variables.mediumFontSize,
+  },
+  backIconContainer: {
+    paddingRight: 15,
   },
 });
 
@@ -34,7 +51,7 @@ const Header = ({title, canBack}) => {
   return (
     <View style={styles.header}>
       {canBack ? (
-        <TouchableOpacity onPress={goBack}>
+        <TouchableOpacity onPress={goBack} style={styles.backIconContainer}>
           <Icon
             name="arrow-left"
             color={colors.textColor}

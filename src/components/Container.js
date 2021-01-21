@@ -11,16 +11,25 @@ const styles = StyleSheet.create({
   container: {
     height: '100%',
   },
+  containerHeaderSpacement: {
+    paddingTop: 60,
+  },
 });
 
 const Container = ({headerTitle, children, color}) => {
   const containerStyle = useMemo(() => {
+    const containerStyles = [styles.container];
+
     if (color) {
-      return [styles.container, {backgroundColor: color}];
+      containerStyles.push({backgroundColor: color});
     }
 
-    return styles.container;
-  }, [color]);
+    if (headerTitle) {
+      containerStyles.push(styles.containerHeaderSpacement);
+    }
+
+    return containerStyles;
+  }, [color, headerTitle]);
 
   return (
     <SafeAreaView style={containerStyle}>
